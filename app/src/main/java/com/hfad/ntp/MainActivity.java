@@ -97,28 +97,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        mButtonQrCode.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String text = mTextTv.getText().toString().trim();
-//
-//                if (text != null) {
-//                    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-//
-//                    try {
-//                        BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 500, 500);
-//                        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-//                        Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-//                        mImageIv.setImageBitmap(bitmap);
-//                    } catch (WriterException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
-//            }
-//        });
-
-
     }
 
     @Override
@@ -209,10 +187,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onQrGeneration(View view){
+    public void onQrGeneration(View view) {
         String text = mTextTv.getText().toString();
         Intent intent = new Intent(this, Qrcode_generation.class);
-        intent.putExtra(Qrcode_generation.TEXT,text);
+        intent.putExtra(Qrcode_generation.TEXT, text);
         startActivity(intent);
 
     }
